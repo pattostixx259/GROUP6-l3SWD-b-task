@@ -1,0 +1,162 @@
+* {  
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    color: #0066ff;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    background: transparent;
+    width: 600px;
+    height: 40pc;
+    box-shadow: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    margin-top: 60px;
+    margin-left: 65vh;
+    left: 0;
+    right: 0;
+    margin-bottom: 40px;
+}
+#task{
+    background: #fff;
+    padding: 32px;
+    background: transparent;
+    width: 600px;
+    height: 30pc;
+    box-shadow: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(21, 31, 124, 0.9);
+    margin: 20vh;
+    margin-top: 130px;
+    position: center;
+    margin-left: 29pc;
+    left: 0;
+    right: 0;
+}
+#button{
+    width: 470px;
+    height: 38px;
+    border-radius: 8px;
+    border: none;
+    font-size: 23px;
+    color: wheat;
+    background: linear-gradient(to right, #1e90ff, #0066ff);
+}
+#task
+task h2{
+      text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+#task p{
+        text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+
+}
+#heading{
+    padding: 18px;
+    background:linear-gradient(to bottom,rgb(161, 161, 215),rgb(147, 210, 147));
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+#task a{
+     color: #1e90ff;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: bold ;
+    font-size: 20px;
+
+}
+
+.heading {
+    background-color:rgba(23, 50, 91, 0.1) ;
+  text-align: center;
+  padding: 25px;
+  border-radius: 8px;
+
+}
+.card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.input input {
+    width: 90%;
+    padding:15px;
+    border-radius: 6px;
+    border: 1px solid #228984;
+    outline: none;
+}
+
+.input input:focus {
+    border-color: #1e90ff;
+}
+
+.btn {
+    width: 80%;
+    padding: 10px;
+    background: linear-gradient(to right, #1e90ff, #0066ff);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+input::placeholder{
+    font-size: 18px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.card p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.card a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 12px;
+}
+.icon{
+     position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 16px;
+}

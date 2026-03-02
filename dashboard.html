@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMS Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-left">
+        <h2>  📶 SIMS | stock inventory management system</h2>
+    </div>
+    <div class="header-right">
+        <span>👤 Welcome, <span id="loggedUser"></span></span>
+        <button onclick="logout()" class="logout-btn">🚪 Logout</button>
+    </div>
+</header>
+
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>📊 SIMS</h2>
+        <button onclick="showDashboard()">📊 Dashboard</button>
+        <button onclick="showProducts()">📦 Products</button>
+        <button onclick="openForm()">➕ Add Product</button>
+        <button onclick="showLowStock()">⚠️ Low Stock</button>
+        <button onclick="logout()">🚪 Logout</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="topbar">
+            <h2 id="pageTitle">📊 Dashboard</h2>
+            <button class="add-btn" onclick="openForm()">➕ Add Product</button>
+        </div>
+
+        <!-- Stats -->
+        <div class="cards">
+            <div class="card">
+                <h3>📦 Total Products</h3>
+                <p id="totalProducts">0</p>
+            </div>
+            <div class="card">
+                <h3>✅ In Stock</h3>
+                <p id="inStock">0</p>
+            </div>
+            <div class="card">
+                <h3>❌ Out of Stock</h3>
+                <p id="outStock">0</p>
+            </div>
+            <div class="card">
+                <h3>💰 Total Value</h3>
+                <p id="totalValue">$0</p>
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="🔍 Search products...">
+            <button onclick="searchProducts()">🔍 Search</button>
+        </div>
+
+        <!-- Filter -->
+        <div class="filter-bar">
+            <button onclick="filterProducts('all')">📋 All</button>
+            <button onclick="filterProducts('instock')">✅ In Stock</button>
+            <button onclick="filterProducts('outstock')">❌ Out of Stock</button>
+            <button onclick="filterProducts('lowstock')">⚠️ Low Stock</button>
+        </div>
+
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>📦 Name</th>
+                    <th>🏷️ Category</th>
+                    <th>🔢 Quantity</th>
+                    <th>💰 Price</th>
+                    <th>📊 Status</th>
+                    <th>⚙️ Actions</th>
+                </tr>
+            </thead>
+            <tbody id="productTable">
+                <tr><td colspan="7" style="text-align:center; padding:20px;">📦 No products yet</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Add Product Popup -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h3>➕ Add Product</h3>
+        <input type="text" id="name" placeholder="📦 Product Name">
+        <input type="text" id="category" placeholder="🏷️ Category">
+        <input type="number" id="quantity" placeholder="🔢 Quantity">
+        <input type="number" id="price" placeholder="💰 Price">
+        <div class="popup-buttons">
+            <button onclick="addProduct()">💾 Save</button>
+            <button onclick="closeForm()">❌ Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Popup -->
+<div class="popup" id="editPopup">
+    <div class="popup-content">
+        <h3>✏️ Edit Product</h3>
+        <input type="hidden" id="editId">
+        <input type="text" id="editName" placeholder="📦 Product Name">
+        <input type="text" id="editCategory" placeholder="🏷️ Category">
+        <input type="number" id="editQuantity" placeholder="🔢 Quantity">
+        <input type="number" id="editPrice" placeholder="💰 Price">
+        <div class="popup-buttons">
+            <button onclick="updateProduct()">💾 Update</button>
+            <button onclick="closeEditForm()">❌ Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="delete-modal" id="deleteModal">
+    <div class="delete-modal-content">
+        <h3>⚠️ Confirm Delete</h3>
+        <p>Are you sure?</p>
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <button onclick="confirmDelete()">🗑️ Delete</button>
+            <button onclick="closeDeleteModal()">❌ Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
